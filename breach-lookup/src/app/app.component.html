@@ -1,3 +1,25 @@
 <div>
+    <app-header></app-header>
     <h1>Hello World!</h1>
+    <mat-divider [inset]="true"></mat-divider>
+
+
+
+
+    <nav>
+        <a routerLink="/home" routerLinkActive="active">
+            Home
+        </a>
+        <a routerLink="/breaches" routerLinkActive="active">
+            Breaches
+        </a>
+    </nav>
+    <router-outlet></router-outlet>
+    <!-- Routed components go here -->
+
+
+
+
+
+    <app-footer></app-footer>
 </div>

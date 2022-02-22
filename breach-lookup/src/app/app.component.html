@@ -1,25 +1,14 @@
-<div>
+<div class="container py-4">
+
     <app-header></app-header>
-    <h1>Hello World!</h1>
+
+
+    <div class="container col-12">
+        <div class="row h-200 p-5 bg-light border rounded-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
     <mat-divider [inset]="true"></mat-divider>
-
-
-
-
-    <nav>
-        <a routerLink="/home" routerLinkActive="active">
-            Home
-        </a>
-        <a routerLink="/breaches" routerLinkActive="active">
-            Breaches
-        </a>
-    </nav>
-    <router-outlet></router-outlet>
-    <!-- Routed components go here -->
-
-
-
-
-
     <app-footer></app-footer>
 </div>

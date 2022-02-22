@@ -9,7 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './home/home.component'
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
-        MatDividerModule
+        MatDividerModule,
+        NgbModule
     ],
     providers: [],
     bootstrap: [AppComponent]

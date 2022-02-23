@@ -1,5 +1,13 @@
 <div class="breach">
-  <h3>Name: {{ breach.Name }}</h3>
-  <p>pwnCount: {{ breach.PwnCount }}</p>
-  <p>Description: {{ breach.Description }}</p>
+      <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Name: {{ breach.Name }}
+        </mat-panel-title>
+        <mat-panel-description>
+          pwnCount: {{ breach.PwnCount }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{ breach.Description }}</p>
+    </mat-expansion-panel>
 </div>

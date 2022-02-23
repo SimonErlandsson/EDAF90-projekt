@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BreachItemComponent } from './breach-item/breach-item.component';
+import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BreachItemComponent } from './breach-item/breach-item.component';
     MatDividerModule,
     NgbModule,
     HttpClientModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

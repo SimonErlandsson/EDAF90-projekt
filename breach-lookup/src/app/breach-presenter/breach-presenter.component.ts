@@ -3,6 +3,9 @@ import { BreachService } from '../services/breach.service';
 import { Breach } from '../model/Breach';
 import { Sort } from '@angular/material/sort';
 import { Subscription } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { BreachDialogComponent } from '../breach-dialog/breach-dialog.component';
+
 @Component({
     selector: 'app-breach-presenter',
     templateUrl: './breach-presenter.component.html',
@@ -12,7 +15,7 @@ export class BreachPresenterComponent implements OnInit, OnDestroy {
     breaches: Breach[] = [];
     subscription: Subscription;
 
-    constructor(private breachService: BreachService) { }
+    constructor(private breachService: BreachService, private matDialog: MatDialog) { }
 
     ngOnInit(): void {
         this.subscription = this.breachService
@@ -54,8 +57,8 @@ export class BreachPresenterComponent implements OnInit, OnDestroy {
             .reduce((acc, x) => `${acc} ${x},`, "")
     }
 
-    onRowClick(breach: any): void {
-        console.log(breach)
+    onRowClick(breach: Breach): void {
+        this.matDialog.open(BreachDialogComponent, { data: breach });
     }
 
 }

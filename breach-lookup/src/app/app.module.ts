@@ -15,34 +15,38 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BreachItemComponent } from './breach-item/breach-item.component';
 import {
-  MatExpansionModule,
-  MatExpansionPanel,
-  MatAccordion,
+    MatExpansionModule,
+    MatExpansionPanel,
+    MatAccordion,
 } from '@angular/material/expansion';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { BreachDialogComponent } from './breach-dialog/breach-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    BreachPresenterComponent,
-    HeaderComponent,
-    FooterComponent,
-    PageNotFoundComponent,
-    HomeComponent,
-    BreachItemComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDividerModule,
-    NgbModule,
-    HttpClientModule,
-    MatExpansionModule,
-    ScrollingModule,
-    MatSortModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        BreachPresenterComponent,
+        HeaderComponent,
+        FooterComponent,
+        PageNotFoundComponent,
+        HomeComponent,
+        BreachItemComponent,
+        BreachDialogComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatDividerModule,
+        NgbModule,
+        HttpClientModule,
+        MatExpansionModule,
+        ScrollingModule,
+        MatSortModule,
+        MatDialogModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

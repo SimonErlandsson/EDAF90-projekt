@@ -24,6 +24,9 @@ import { BreachDialogComponent } from './breach-dialog/breach-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
+
 
 
 @NgModule({
@@ -49,7 +52,9 @@ import { MatTableModule } from '@angular/material/table';
         MatSortModule,
         MatDialogModule,
         MatPaginatorModule,
-        MatTableModule
+        MatTableModule,
+        MatFormFieldModule,
+        MatInputModule
     ],
     providers: [],
     bootstrap: [AppComponent],

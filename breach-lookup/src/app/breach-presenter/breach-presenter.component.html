@@ -4,8 +4,13 @@
     <br>
     To read more about a breach, click on the corresponding row.
 </p>
+<mat-form-field appearance="standard">
+  <mat-label>Filter result</mat-label>
+  <input matInput (keyup)="onFilter($event)" placeholder="Search results" #input>
+</mat-form-field>
 
-<mat-table [dataSource]="breaches" matSort>
+<mat-table [dataSource]="breaches" matSort mat-table class="mat-elevation-z8">
+
 
     <ng-container matColumnDef="logo">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
@@ -41,5 +46,6 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)">
     </mat-row>
 </mat-table>
+
 
 <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>

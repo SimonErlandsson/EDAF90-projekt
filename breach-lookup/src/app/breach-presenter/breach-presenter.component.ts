@@ -47,5 +47,10 @@ export class BreachPresenterComponent implements OnInit, OnDestroy {
     onRowClick(breach: Breach): void {
         this.matDialog.open(BreachDialogComponent, { data: breach });
     }
+    onFilter(event: Event) {
+      console.log(event)
+      const filterValue = (event.target as HTMLInputElement).value;
+      this.breaches.filter = filterValue.trim().toLowerCase();
+  }
 
 }

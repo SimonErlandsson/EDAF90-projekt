@@ -14,6 +14,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BreachItemComponent } from './breach-item/breach-item.component';
+import {MatTableModule} from '@angular/material/table';
+
 import {
   MatExpansionModule,
   MatExpansionPanel,
@@ -41,6 +43,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatExpansionModule,
     ScrollingModule,
     MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

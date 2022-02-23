@@ -11,7 +11,7 @@ export class BreachService {
 
   //BREACHES: Breach[] = [
   //   {
-  //     ame: 'testName',
+  //     name: 'testName',
   //     title: 'testTitle',
   //     domain: 'testDomain',
   //     breachDate: '020202',
@@ -52,6 +52,6 @@ export class BreachService {
   getBreaches(): Observable<Breach[]> {
     // const breaches = of(this.BREACHES);
     // return breaches;
-    return this.http.get<Breach[]>(this.apiUrl);
+    return this.http.get<Breach[]>(this.apiUrl,{})
   }
 }

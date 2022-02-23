@@ -1,6 +1,15 @@
+td {
+    border: 1px solid;
+}
+
+tr:nth-child(even) {
+    background: rgb(245, 245, 245)
+}
+
+tr:nth-child(odd) {
+    background: #FFF
+}
 
 td {
-  border: 1px solid;
+    padding: 5px
 }
-tr:nth-child(even) {background: #CCC}
-tr:nth-child(odd) {background: #FFF}

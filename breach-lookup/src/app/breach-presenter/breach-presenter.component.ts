@@ -47,6 +47,17 @@ export class BreachPresenterComponent implements OnInit, OnDestroy {
             }
         });
     }
+
+    formatCategories(categories: string[]): string {
+        return categories
+            .map(x => x)
+            .reduce((acc, x) => `${acc} ${x},`, "")
+    }
+
+    onRowClick(breach: any): void {
+        console.log(breach)
+    }
+
 }
 
 function compare(a: number | string, b: number | string, isAsc: boolean) {

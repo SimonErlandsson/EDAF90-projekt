@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BreachItemComponent } from './breach-item/breach-item.component';
-import { MatExpansionModule, MatExpansionPanel, MatAccordion } from '@angular/material/expansion';
+import {
+  MatExpansionModule,
+  MatExpansionPanel,
+  MatAccordion,
+} from '@angular/material/expansion';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
@@ -34,7 +39,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     NgbModule,
     HttpClientModule,
     MatExpansionModule,
-    ScrollingModule
+    ScrollingModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

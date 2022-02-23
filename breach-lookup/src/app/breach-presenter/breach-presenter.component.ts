@@ -18,7 +18,7 @@ export class BreachPresenterComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.subscription = this.breachService
             .getBreaches()
-            .subscribe((breaches) => (this.breaches = breaches));
+            .subscribe((breaches) => (this.breaches = breaches.slice(1,100))); //only for faster response during development
     }
 
     ngOnDestroy(): void {

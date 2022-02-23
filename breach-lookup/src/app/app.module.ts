@@ -13,7 +13,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BreachItemComponent } from './breach-item/breach-item.component';
-import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
+import { MatExpansionModule, MatExpansionPanel, MatAccordion } from '@angular/material/expansion';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansi
     MatDividerModule,
     NgbModule,
     HttpClientModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

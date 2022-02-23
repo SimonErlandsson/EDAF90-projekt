@@ -1,3 +1,5 @@
 <h1>Breaches</h1>
-<app-breach-item *ngFor="let breach of breaches" [breach]="breach">
-</app-breach-item>
+  <cdk-virtual-scroll-viewport style="height: 300px;" itemSize="1" minBufferPx="200" maxBufferPx="400">
+    <app-breach-item *cdkVirtualFor="let breach of breaches" [breach]="breach">
+    </app-breach-item>
+  </cdk-virtual-scroll-viewport>

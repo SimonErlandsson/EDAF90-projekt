@@ -15,7 +15,8 @@ export class BreachPresenterComponent implements OnInit {
   ngOnInit(): void {
     this.breachService
       .getBreaches()
-      .subscribe((breaches) => (this.breaches = breaches));
+      .subscribe((breaches) => {
+        (this.breaches = breaches)});
   }
   sortData(sort: Sort) {
     const data = this.breaches.slice();

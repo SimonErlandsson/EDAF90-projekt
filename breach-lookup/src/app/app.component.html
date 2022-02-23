@@ -1,13 +1,12 @@
+
 <app-header></app-header>
-
-<div class="container py-4">
-
-    <div class="container col-12">
-        <div class="row h-200 p-5 bg-light border rounded-3">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
-
-    <mat-divider [inset]="true"></mat-divider>
+<div class="wrapper">
+  <div class="container-fluid">
+      <div class="row h-200 p-5 bg-light border rounded-3">
+          <router-outlet></router-outlet>
+      </div>
+  <mat-divider [inset]="true"></mat-divider>
+  </div>
 </div>
 <app-footer></app-footer>
+

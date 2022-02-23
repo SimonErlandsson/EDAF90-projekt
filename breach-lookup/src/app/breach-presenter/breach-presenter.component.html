@@ -1,7 +1,3 @@
-<h2>Breaches</h2>
-<p>breach-presenter works!</p>
-<div *ngFor="let breach of breaches">
-  <h3>Name: {{ breach.Name }}</h3>
-  <p>pwnCount: {{ breach.PwnCount }}</p>
-  <p>Description: {{ breach.Description }}</p>
-</div>
+<h1>Breaches</h1>
+<app-breach-item *ngFor="let breach of breaches" [breach]="breach">
+</app-breach-item>

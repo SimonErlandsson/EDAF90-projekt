@@ -12,6 +12,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BreachItemComponent } from './breach-item/breach-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
+    BreachItemComponent,
   ],
   imports: [
     BrowserModule,

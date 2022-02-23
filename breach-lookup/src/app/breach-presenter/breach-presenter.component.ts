@@ -1,10 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BreachService } from '../services/breach.service';
 import { Breach } from '../model/Breach';
-import { Sort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table'
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { BreachDialogComponent } from '../breach-dialog/breach-dialog.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
     selector: 'app-breach-presenter',
@@ -12,57 +14,38 @@ import { BreachDialogComponent } from '../breach-dialog/breach-dialog.component'
     styleUrls: ['./breach-presenter.component.css'],
 })
 export class BreachPresenterComponent implements OnInit, OnDestroy {
-    breaches: Breach[] = [];
+    breaches: MatTableDataSource<Breach>;
     subscription: Subscription;
+
+    @ViewChild(MatSort) sort: MatSort;
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    displayedColumns = ["logo", "Name", "PwnCount", "BreachDate", "Domain", "categories"]
+
 
     constructor(private breachService: BreachService, private matDialog: MatDialog) { }
 
     ngOnInit(): void {
         this.subscription = this.breachService
             .getBreaches()
-            .subscribe((breaches) => (this.breaches = breaches));
+            .subscribe((breaches) => {
+                this.breaches = new MatTableDataSource(breaches);
+                this.breaches.sort = this.sort;
+                this.breaches.paginator = this.paginator;
+            });
     }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe()
-    }
-
-    sortData(sort: Sort) {
-        const data = this.breaches.slice();
-        if (!sort.active || sort.direction === '') {
-            this.breaches = data;
-            return;
-        }
-
-        this.breaches = data.sort((a, b) => {
-            const isAsc = sort.direction === 'asc';
-            switch (sort.active) {
-                case 'name':
-                    return compare(a.Name, b.Name, isAsc);
-                case 'pwnCount':
-                    return compare(a.PwnCount, b.PwnCount, isAsc);
-                case 'breach_date':
-                    return compare(a.BreachDate, b.BreachDate, isAsc);
-                case 'domain':
-                    return compare(a.Domain, b.Domain, isAsc);
-                default:
-                    return 0;
-            }
-        });
+        this.subscription.unsubscribe();
     }
 
     formatCategories(categories: string[]): string {
         return categories
             .map(x => x)
-            .reduce((acc, x) => `${acc} ${x},`, "")
+            .reduce((acc, x) => `${acc} ${x},`, "").slice(0, -1)
     }
 
     onRowClick(breach: Breach): void {
         this.matDialog.open(BreachDialogComponent, { data: breach });
     }
 
-}
-
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

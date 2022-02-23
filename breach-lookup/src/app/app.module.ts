@@ -22,6 +22,9 @@ import {
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { BreachDialogComponent } from './breach-dialog/breach-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
     declarations: [
@@ -44,7 +47,9 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatExpansionModule,
         ScrollingModule,
         MatSortModule,
-        MatDialogModule
+        MatDialogModule,
+        MatPaginatorModule,
+        MatTableModule
     ],
     providers: [],
     bootstrap: [AppComponent],

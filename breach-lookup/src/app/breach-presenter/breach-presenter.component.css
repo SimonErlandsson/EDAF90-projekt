@@ -1,15 +1,19 @@
-td {
-    border: 1px solid;
+mat-table {
+    border: 1px solid rgb(226, 226, 226);
 }
 
-tr:nth-child(even) {
+mat-row:nth-child(even) {
     background: rgb(245, 245, 245)
 }
 
-tr:nth-child(odd) {
+mat-row:nth-child(odd) {
     background: #FFF
 }
 
-td {
-    padding: 5px
+.mat-column-logo {
+    max-width: 7%;
+}
+
+.mat-column-categories {
+    min-width: 38%;
 }

@@ -5,22 +5,41 @@
     To read more about a breach, click on the corresponding row.
 </p>
 
-<table matSort (matSortChange)="sortData($event)">
-    <tr class="header">
-        <th></th>
-        <th mat-sort-header="name">Name</th>
-        <th mat-sort-header="pwnCount">PwnCount</th>
-        <th mat-sort-header="breach_date">Breach date</th>
-        <th mat-sort-header="domain">Domain</th>
-        <th>Categories</th>
-    </tr>
+<mat-table [dataSource]="breaches" matSort>
 
-    <tr *ngFor="let breach of breaches" (click)="onRowClick(breach)">
-        <td><img [src]="breach.LogoPath" width="25px"></td>
-        <td>{{ breach.Name }}</td>
-        <td>{{ breach.PwnCount }}</td>
-        <td>{{ breach.BreachDate }}</td>
-        <td>{{ breach.Domain }}</td>
-        <td>{{ formatCategories(breach.DataClasses) }}</td>
-    </tr>
-</table>
+    <ng-container matColumnDef="logo">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let row"><img [src]="row.LogoPath" width="25px"></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.Name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="PwnCount">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Number of Accounts </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.PwnCount}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="BreachDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Breach Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.BreachDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Domain">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Domain </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.Domain}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="categories">
+        <mat-header-cell *matHeaderCellDef> Categories </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{formatCategories(row.DataClasses) }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)">
+    </mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>

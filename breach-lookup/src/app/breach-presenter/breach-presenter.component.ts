@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class BreachPresenterComponent implements OnInit, OnDestroy {
     breaches: Breach[] = [];
-    subscription: Subscription
+    subscription: Subscription;
 
 
     constructor(private breachService: BreachService) { }

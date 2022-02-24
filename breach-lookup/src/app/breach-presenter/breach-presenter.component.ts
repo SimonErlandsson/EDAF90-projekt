@@ -40,17 +40,16 @@ export class BreachPresenterComponent implements OnInit, OnDestroy {
 
     formatCategories(categories: string[]): string {
         return categories
-            .map(x => x)
             .reduce((acc, x) => `${acc} ${x},`, "").slice(0, -1)
     }
 
     onRowClick(breach: Breach): void {
         this.matDialog.open(BreachDialogComponent, { data: breach });
     }
+
     onFilter(event: Event) {
-      console.log(event)
-      const filterValue = (event.target as HTMLInputElement).value;
-      this.breaches.filter = filterValue.trim().toLowerCase();
-  }
+        const filterValue = (event.target as HTMLInputElement).value;
+        this.breaches.filter = filterValue.trim().toLowerCase();
+    }
 
 }

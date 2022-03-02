@@ -5,4 +5,4 @@ Contributors: Leo Westerberg, Adam Forsberg, William Widlund & Simon Erlandsson.
 
 <img src="preview.png" width="800">
 
-To run, install Angular and navigate to ./breach-lookup and run "ng serve".
+To run, install Angular, navigate to ./breach-lookup and run "ng serve".
